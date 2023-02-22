@@ -1,19 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-html {
-    scroll-behavior:smooth;
-
-}
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
-}
-
-body {
-    background-color: #222228;
+    font-family: sans-serif;
 }
 
 .area .context {
@@ -152,7 +144,7 @@ body {
 
 .banner{
     width: 100%;
-    height: fit-content;
+    height: 100vh;
     /* background-image: linear-gradient(rgba(0,0,0,0.75),rgba(183, 182, 182, 0.75)), url(Ba.jpg);
     background-size: cover;
     background-position: center; */
@@ -160,7 +152,7 @@ body {
 .navbar{
     width: 85%;
     margin: auto;
-    height: 10vh;
+    padding: 35px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -200,15 +192,12 @@ body {
 }
 
 .content{
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 50%;
     color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    transform: translateY(-50%);
     text-align: center;
-    padding-bottom: 15vh;
 }
 
 .content h1{
@@ -257,114 +246,3 @@ button:hover{
 }
 
 
-.area {
-    background-color: #222228;
-    width: 100vw;
-    height: 100vh;
-}
-.main {
-    min-width: 500px;
-    position: absolute;
-    width: 100vw;
-    height: fit-content;
-    top: 0;
-    left: 0;
-    z-index: 10;
-}
-
-.navbar .phone {
-    display: flex;
-    /* display: none; */
-    flex-direction: column;
-    background-color: transparent;
-    display: none;
-}
-
-.about-us {
-    width: 100vw;
-    height: 100vh;
-    background-color: transparent;
-}
-
-.fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 0;
-}
-
-
-.about-us{
-    display: flex;
-    justify-content: space-between;
-    gap: 100px;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    padding-left: 70px;
-    padding-right: 70px;
-    align-items: center;
-}
-
-.about-us .description{
-    color: #fff;
-    width: 30vw;
-    height: 30vh;
-    font-size: 20px;
-}
-
-.about-us .description h2{
-    margin-bottom: 16px;
-    color: white;
-    font-size: 42px;
-    font-weight: bold;
-}
-.services{
-    display: flex;
-    justify-content: space-between;
-    gap: 100px;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    padding-left: 70px;
-    padding-right: 70px;
-    align-items: center;
-}
-
-.services .description{
-    color: #fff;
-    width: 30vw;
-    height: 30vh;
-    font-size: 20px;
-}
-
-.services .description h2{
-    margin-bottom: 16px;
-    color: white;
-    font-size: 42px;
-    font-weight: bold;
-}
-
-.img__banner {
-    width: 40%;
-    height: auto;
-    border-radius: 18px;
-}
-
-@media(max-width: 916px){
-    .container{
-        max-width: 100%;
-    }
-
-    .navbar ul{
-        display: none;
-    }
-
-    .main .navbar .phone{
-        display: flex;
-        flex-direction: column;
-    }
-
-}
-
-3310256900
