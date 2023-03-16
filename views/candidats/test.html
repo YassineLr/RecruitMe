@@ -28,16 +28,22 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.3.0/css/all.css">
 
 
     <title>Document</title>
 </head>
 
 <body>
-    <header class="pattern"></header>
+    <header>
+        <img id="logo" src="../../public/images/logo.png" >
+
+        <div class="pattern"></div>
+
+        <div class="pattern1">
+        </div>
+    </header>
     <div class="container">
-
-
         <div class="form-section form-resume">
             <form class="row g-3 needs-validation" novalidate>
                 <div class="first-inputs">
@@ -74,7 +80,8 @@
                         <div class="input-group has-validation">
                             <span class="input-group-text" id="inputGroupPrepend">@</span>
                             <input type="text" class="form-control" id="validationCustomUsername"
-                                aria-describedby="inputGroupPrepend" required>
+                                aria-describedby="inputGroupPrepend" required
+                                data-ddg-inputtype="identities.emailAddress">
                             <div class="invalid-feedback">
                                 Veuillez entrer un e-mail valide.
                             </div>
@@ -163,9 +170,12 @@
         </div>
 
         <div class="form-section form-education">
-            <h1>Education</h1>
+            <div class="edu-header">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h1>Education</h1>
+            </div>
             <div class="form-educ" id="form-educ">
-                <form class="row g-4 needs-validation" novalidate>
+                <form class="row g-4 needs-validation " novalidate>
 
                     <div class="first-inputs">
                         <div class="degree-city">
@@ -182,42 +192,42 @@
                                 <div class="invalid-feedback">
                                     Veuillez entrer un nom.
                                 </div>
-    
+
                             </div>
                         </div>
-    
+
                     </div>
-    
-    
+
+
                     <div class="col-md-4" style="width: 100%;">
                         <label for="validationCustomUsername" class="form-label">Établissement</label>
                         <div class="input-group has-validation">
-                            <input type="text" class="form-control" id="validationCustom02" required>
-    
+                            <input type="text" class="form-control" id="validationCustom" required data-ddg-inputtype="identities.addressCity">
+
                             <div class="invalid-feedback">
                                 Veuillez entrer un e-mail valide.
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="col-md-3" style="width: 50%;">
                         <label for="validationCustom04" class="form-label">Date de debut</label>
-                        <input type="text" class="form-control datepicker edu-date-begin" placeholder="14/10/2001">
-    
+                        <input type="text" class="form-control edu-date" placeholder="14/10/2001">
+
                         <div class="invalid-feedback">
                             Veuillez entrer une date valide.
                         </div>
                     </div>
                     <div class="col-md-3" style="width: 50%;">
                         <label for="validationCustom04" class="form-label">Date d'obtention</label>
-                        <input type="text" class="form-control datepicker" placeholder="14/10/2001">
-    
+                        <input type="text" class="form-control edu-date" placeholder="14/10/2001">
+
                         <div class="invalid-feedback">
                             Veuillez entrer une date valide.
                         </div>
                     </div>
-    
-    
+
+
                     <div class="col-md-6" style="width: 100%;">
                         <label for="validationCustom03" class="form-label">Déscription</label>
                         <textarea type="textarea" class="form-control" id="validationCustom03"></textarea>
@@ -225,110 +235,123 @@
                             Veuillez entrer une adresse valide.
                         </div>
                     </div>
-                    
-                    
+
+
                 </form>
-            
+
                 <div class="btns">
-                    <div class="col-12">
-                        <button class="btn btn-primary" type="button">Enregistrer</button>
-                    </div>
-                    <button class="delete-btn" type="button">X</button>
+
+                    <button class="delete-btn" type="button">
+                        Supprimer</button>
+
                 </div>
             </div>
 
-           
+
         </div>
-        <div class="add-btn">
-            <button class="btn btn-primary add-btn-edu" >Ajouter un diplôme</button>
+        <div class="add-btn-edu">
+            <button class="btn btn-primary add-btn-edu">
+                <i class="fa-regular fa-circle-plus"></i>
+                Ajouter un diplôme</button>
         </div>
+
+        <!-- EXP FORM -->
 
         <div class="form-section form-experience">
-            <form class="row g-4 needs-validation" novalidate>
-                <h1>Experience</h1>
 
-                <div class="first-inputs">
-                    <div class="degree-city">
-                        <div class="col-md-4" style="width: 50%;">
-                            <label for="validationCustom01" class="form-label">Diplôme</label>
-                            <input type="text" class="form-control" id="validationCustom01" required>
-                            <div class="invalid-feedback">
-                                Veuillez entrer un prénom.
+            <div class="exp-header">
+                <i class="fa-solid fa-briefcase"></i>
+                <h1>Éxperience</h1>
+
+            </div>
+            <div class="form-exp" id="form-exp">
+                <form class="row g-4 needs-validation " novalidate>
+
+                    <div class="first-inputs">
+                        <div class="degree-city">
+                            <div class="col-md-4" style="width: 50%;">
+                                <label for="validationCustom01" class="form-label">Occupation</label>
+                                <input type="text" class="form-control" id="validationCustom01" required>
+                                
+                            </div>
+                            <div class="col-md-4" style="width: 50%;">
+                                <label for="validationCustom02" class="form-label">Ville</label>
+                                <input type="text" class="form-control" id="validation" required>
+                                
+
                             </div>
                         </div>
-                        <div class="col-md-4" style="width: 50%;">
-                            <label for="validationCustom02" class="form-label">Ville</label>
-                            <input type="text" class="form-control" id="validationCustom02" required>
-                            <div class="invalid-feedback">
-                                Veuillez entrer un nom.
-                            </div>
 
+                    </div>
+
+
+                    <div class="col-md-4" style="width: 100%;">
+                        <label for="validationCustomUsername" class="form-label">Entreprise</label>
+                        <div class="input-group has-validation">
+                            <input type="text" class="form-control" id="validationCustom" required data-ddg-inputtype="identities.addressCity">
+
+                            <div class="invalid-feedback">
+                                Veuillez entrer un e-mail valide.
+                            </div>
                         </div>
                     </div>
 
-                </div>
-
-
-                <div class="col-md-4" style="width: 100%;">
-                    <label for="validationCustomUsername" class="form-label">Établissement</label>
-                    <div class="input-group has-validation">
-                        <input type="text" class="form-control" id="validationCustom02" required>
+                    <div class="col-md-3" style="width: 50%;">
+                        <label for="validationCustom04" class="form-label">Date de début</label>
+                        <input type="text" class="form-control edu-date" placeholder="14/10/2001">
 
                         <div class="invalid-feedback">
-                            Veuillez entrer un e-mail valide.
+                            Veuillez entrer une date valide.
                         </div>
                     </div>
-                </div>
+                    <div class="col-md-3" style="width: 50%;">
+                        <label for="exp-end-date" class="form-label">Date de fin</label>
+                        <input type="text" class="form-control edu-date" id="exp-end-date" placeholder="14/10/2001">
 
-                <div class="col-md-3" style="width: 50%;">
-                    <label for="validationCustom04" class="form-label">Date de debut</label>
-                    <input type="text" class="form-control datepicker" placeholder="14/10/2001">
-
-                    <div class="invalid-feedback">
-                        Veuillez entrer une date valide.
+                        <div class="invalid-feedback">
+                            Veuillez entrer une date valide.
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3" style="width: 50%;">
-                    <label for="validationCustom04" class="form-label">Date d'obtention</label>
-                    <input type="text" class="form-control datepicker" placeholder="14/10/2001">
 
-                    <div class="invalid-feedback">
-                        Veuillez entrer une date valide.
+
+                    <div class="col-md-6" style="width: 100%;">
+                        <label for="exp-desc" class="form-label">Déscription</label>
+                        <textarea type="textarea" class="form-control" id="exp-desc"></textarea>
+                        <div class="invalid-feedback">
+                            Veuillez entrer une adresse valide.
+                        </div>
                     </div>
+
+
+                </form>
+
+
+
+                <div class="btns">
+                    <button class="delete-btn-exp" type="button">Supprimer</button>
+
                 </div>
-
-
-                <div class="col-md-6" style="width: 100%;">
-                    <label for="validationCustom03" class="form-label">Déscription</label>
-                    <input type="textarea" class="form-control" id="validationCustom03" required>
-                    <div class="invalid-feedback">
-                        Veuillez entrer une adresse valide.
-                    </div>
-                </div>
+            </div>
 
 
 
-                <div class="col-12">
-                    <button class="btn btn-primary" type="submit">Ajouter un autre diplôme</button>
-                </div>
-            </form>
         </div>
+        <div class="add-btn-exp">
+            <button class="btn btn-primary add-btn-exp">
+                <i class="fa-regular fa-circle-plus"></i>
+
+                Ajouter une éxperience</button>
+        </div>
+
+
 
 
     </div>
     <footer>
-        <div class="footer"></div>
+
     </footer>
 
     <script>
-        var today = new Date();
-        var minDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
-
-        $('.datepicker').datepicker({
-            endDate: minDate
-        });
-
-
         var input = document.querySelector("#phone");
         window.intlTelInput(input);
     </script>

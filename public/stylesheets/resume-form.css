@@ -11,7 +11,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgb(31, 135, 219);
+    background: #293237;
 }
 .container{
     position: relative;
@@ -37,7 +37,7 @@ body{
     height: 3px;
     width: 27px;
     border-radius: 8px;
-    background-color: #4070f4;
+    background-color: #293237;
 
  }
  .container form{

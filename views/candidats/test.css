@@ -1,15 +1,44 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
+
+#logo {
+    z-index: 99;
+    position: relative;
+    top: 0;
+    color: white;
+    margin-left: 2em;
+    width: 15em;
+    margin-top:2em ;
+}
+
+.pattern1 {
+    position: fixed;
+    z-index: 0;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #293237;
+}
+
 .pattern {
     position: fixed;
+    z-index: 0;
+    top: 0px;
+    left: 0;
     width: 100%;
     height: 30%;
-    background-color: #00B4FF;
+    transform: skewY(-6deg);
+    background-color: #293237;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 
 }
-.container{
+
+.container {
+    margin-top: 5%;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -18,30 +47,41 @@
 }
 
 
-.form-section{
+.form-section {
     position: relative;
     display: inline-block;
     margin: 2% 2%;
 }
 
+.edu-header,
+.exp-header {
+    font-size: 30px;
+    display: flex;
+    column-gap: 10px;
+    align-items: baseline;
+}
 
-.form-education,.form-resume, .form-experience{
+.form-education,
+.form-resume,
+.form-experience {
 
     max-width: 700px;
     border-radius: 5px;
-    box-shadow: 0 3px 6px #0000004d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 20px;
     background-color: white;
 }
 
-.first-inputs{
+.first-inputs {
     display: flex;
     width: 100%;
 }
+
 .name {
     width: 100%;
 }
-.degree-city{
+
+.degree-city {
     display: inline-flex;
     column-gap: 10px;
     width: 100%;
@@ -49,23 +89,25 @@
 }
 
 
-.upload-image{
+.upload-image {
     display: flex;
     width: 50%;
     height: 100%;
     position: relative;
-   
+
 }
-.upload-image img{
+
+.upload-image img {
     height: 130px;
     width: 130px;
     border-radius: 50%;
     border: 6px solid #eaeaea;
 
 }
-.upload-image .round{
+
+.upload-image .round {
     position: relative;
-    background: #00B4FF;
+    background: #293237;
     width: 32px;
     height: 32px;
     line-height: 33px;
@@ -74,16 +116,17 @@
     overflow: hidden;
 }
 
-.upload-image .round input[type='file']{
+.upload-image .round input[type='file'] {
     position: absolute;
     transform: scale(2);
     opacity: 0;
 }
-input[type='file']::-webkit-file-upload-button{
+
+input[type='file']::-webkit-file-upload-button {
     cursor: pointer;
 }
 
-.email-num{
+.email-num {
     display: flex;
     width: 100%;
     justify-content: space-around;
@@ -92,53 +135,79 @@ input[type='file']::-webkit-file-upload-button{
 
 .intl-tel-input {
     display: table-cell;
-  }
-  .intl-tel-input .selected-flag {
+}
+
+.intl-tel-input .selected-flag {
     z-index: 4;
-  }
-  .intl-tel-input .country-list {
+}
+
+.intl-tel-input .country-list {
     z-index: 5;
-  }
-  .input-group .intl-tel-input .form-control {
+}
+
+.input-group .intl-tel-input .form-control {
     border-top-left-radius: 4px;
     border-top-right-radius: 0;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 0;
-  }
+}
 
-.col-12{
+.iti.iti--allow-dropdown {
+    width: 100%;
+}
+
+.col-12 {
     display: flex;
     justify-content: right;
 }
-.col-12 .sub-btn{
+
+.col-12 .sub-btn {
     display: flex;
 
     justify-content: right;
 }
 
-.btns{
+.btns {
     display: flex;
     justify-content: right;
     column-gap: 3px;
     margin-top: 10px;
 }
-.delete-btn{
+
+.delete-btn,
+.delete-btn-exp {
     background-color: red;
     color: white;
-    font-weight: bold;
     border: none;
-    padding: 10px;
+    padding: 8px 15px 8px;
     border-radius: 5px;
+}
 
-    
-}
-.add-btn{
+
+
+.add-btn-exp,
+.add-btn-edu {
+    position: relative;
     display: flex;
-    justify-content: center;
-    margin-top: 1%;
+    /* justify-content: center; */
+    flex-direction: column;
+    bottom: 39px;
+
 }
-.footer{
-    height: 100px;
-    width: 100%;
-    background-color: #00B4FF;
+
+button.btn.btn-primary.add-btn-exp,
+button.btn.btn-primary.add-btn-edu {
+    display: inline-block;
+    align-items: center;
+    width: 300px;
+    border: 2px dashed;
+    background: none;
+    color: rgb(71, 71, 71);
+}
+
+
+
+.dates-exp {
+    display: flex;
+    column-gap: 5px;
 }
