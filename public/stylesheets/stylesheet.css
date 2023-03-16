@@ -193,7 +193,7 @@ header {
   cursor: pointer;
 }
 
-.lesson-wrapper {
+.info-wrapper {
   padding-bottom: 80px;
   padding-left: 5%;
   padding-right: 5%;
@@ -211,16 +211,16 @@ header {
   font-weight: normal;
 }
 
-.lesson {
+.info {
   float: left;
   width: 25%;
 }
 
-.lesson-icon {
+.info-icon {
   position: relative;
 }
 
-.lesson-icon p {
+.info-icon p {
   position: absolute;
   top: 44%;
   width: 100%;
