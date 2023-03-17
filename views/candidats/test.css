@@ -8,8 +8,9 @@
     position: relative;
     top: 0;
     color: white;
-    margin-left: 10px;
-
+    margin-left: 2em;
+    width: 15em;
+    margin-top:2em ;
 }
 
 .pattern1 {
@@ -19,7 +20,7 @@
     left: 0;
     width: 100%;
     height: 100px;
-    background-color: #00aff0;
+    background-color: #293237;
 }
 
 .pattern {
@@ -30,7 +31,7 @@
     width: 100%;
     height: 30%;
     transform: skewY(-6deg);
-    background-color: #00aff0;
+    background-color: #293237;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 
@@ -106,7 +107,7 @@
 
 .upload-image .round {
     position: relative;
-    background: #00aff0;
+    background: #293237;
     width: 32px;
     height: 32px;
     line-height: 33px;
