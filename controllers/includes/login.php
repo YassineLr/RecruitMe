@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 
 if (isset($_POST["submit"])) {
     //grabbing the data
@@ -17,7 +19,9 @@ if (isset($_POST["submit"])) {
     // //running error handlers and user signup 
     $login->loginUser();
     //going back to front page 
-    header("location: /RecruitMe/views/candidats/fill-method.php");
+    $_SESSION["token"] = "true";
+    // print_r($_SESSION);
+    header("location: /RecruitMe/controllers/candidat-forms/dashboard.php");
     
 }
 
