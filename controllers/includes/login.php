@@ -21,8 +21,22 @@ if (isset($_POST["submit"])) {
     //going back to front page 
     $_SESSION["token"] = "true";
     // print_r($_SESSION);
-    header("location: /RecruitMe/controllers/candidat-forms/dashboard.php");
-    
+    $usertype = $_SESSION["usertype"];
+    // echo $usertype;
+
+    if($usertype == "candidat"){
+        header("location: /RecruitMe/controllers/candidat-forms/dashboard.php");
+        // echo $usertype;
+
+    }
+    elseif($usertype == "recruteur"){
+        header("location: /RecruitMe/controllers/candidat-forms/dashboard-rec.php");
+
+    }
+    else{
+        // header("location: /RecruitMe/controllers/candidat-forms/dashboard-rec.php");
+        echo "error";
+    }
 }
 
 ?>

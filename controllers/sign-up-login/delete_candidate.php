@@ -7,7 +7,7 @@
         $database = new Connection();
         $db = $database->open();
         try{
-            $sql = "DELETE FROM view_candidate WHERE id = '".$_GET['id']."'";
+            $sql = "DELETE FROM candidats WHERE id_candidats = '".$_GET['id']."'";
             //if-else statement in executing our query
             $_SESSION['message'] = ( $db->exec($sql) ) ? 'Member deleted successfully' : 'Something went wrong. Cannot delete member';
         }

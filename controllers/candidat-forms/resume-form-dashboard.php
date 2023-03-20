@@ -5,11 +5,8 @@
 
 require_once './send-resume.php';
 $formSend = new CandidatsResume();
-$user = $_SESSION['user'];
-$userEdu = $_SESSION['userEdu'];
-$userExp = $_SESSION['userExp'];
-$userSkills = $_SESSION['userSkills'];
 $userInfo = $_SESSION['user'];
+
 
 ?>
 
@@ -27,8 +24,8 @@ $userInfo = $_SESSION['user'];
     </header>
 
     <script>
-        var userSkills = <?php echo json_encode($userInfo); ?>;
-        console.log(userSkills);
+        var user = <?php echo json_encode($userInfo); ?>;
+        console.log(user);
 
  
     </script>
@@ -74,14 +71,14 @@ $userInfo = $_SESSION['user'];
                                 <div class="col-md-4" style="width: 100%;">
 
                                     <label for="validationCustom01" class="form-label">Prénom</label>
-                                    <input type="text" class="form-control" id="validationCustom01" value="<?php echo $user['fname'] ;?>"required>
+                                    <input type="text" class="form-control" id="validationCustom01" value="<?php echo $userInfo["user"]["fname"];?>"required>
                                     <div class="invalid-feedback">
                                         Veuillez entrer un prénom.
                                     </div>
                                 </div>
                                 <div class="col-md-4" style="width: 100%;">
                                     <label for="validationCustom02" class="form-label">Nom</label>
-                                    <input type="text" class="form-control" id="validationCustom02" value="<?php echo $user['lname'] ;?>" required>
+                                    <input type="text" class="form-control" id="validationCustom02" value="<?php echo $userInfo["user"]["lname"] ;?>" required>
                                     <div class="invalid-feedback">
                                         Veuillez entrer un nom.
                                     </div>
@@ -96,7 +93,7 @@ $userInfo = $_SESSION['user'];
                                 <label for="validationCustomUsername" class="form-label">E-mail</label>
                                 <div class="input-group has-validation">
                                     <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                    <input type="email" class="form-control" id="validationCustomUsername" value="<?php echo $user['email'] ;?>" aria-describedby="inputGroupPrepend" required data-ddg-inputtype="identities.emailAddress">
+                                    <input type="email" class="form-control" id="validationCustomUsername" value="<?php echo $userInfo["user"]["email"] ;?>" aria-describedby="inputGroupPrepend" required data-ddg-inputtype="identities.emailAddress">
                                     <div class="invalid-feedback">
                                         Veuillez entrer un e-mail valide.
                                     </div>
@@ -105,7 +102,7 @@ $userInfo = $_SESSION['user'];
                             <div class="col-md-4" style="width: 50%;">
                                 <label for="validationCustomUsername" class="form-label">Numéro de telephone</label>
                                 <div class="input-group">
-                                    <input type="tel" id="phone" class="form-control" value="<?php echo $user['phone'] ;?>" style="width: 100%;">
+                                    <input type="tel" id="phone" class="form-control" value="<?php echo $userInfo["user"]["phone"] ;?>" style="width: 100%;">
 
 
                                     <div class="invalid-feedback">
@@ -118,7 +115,7 @@ $userInfo = $_SESSION['user'];
 
                         <div class="col-md-6" style="width: 100%;">
                             <label for="validationCustom03" class="form-label">Adresse</label>
-                            <input type="text" class="form-control" id="validationCustom03"  value="<?php echo $user['adress'] ;?>" required>
+                            <input type="text" class="form-control" id="validationCustom03"  value="<?php echo $userInfo["user"]["adress"] ;?>" required>
                             <div class="invalid-feedback">
                                 Veuillez entrer une adresse valide.
                             </div>
@@ -127,7 +124,7 @@ $userInfo = $_SESSION['user'];
 
                             <div class="col-md-3" style="width: 49%;">
                                 <label for="validationCustom04" class="form-label">Ville</label>
-                                <input type="text" class="form-control" id="validationCustom05" value="<?php echo $user['city'] ;?>" required>
+                                <input type="text" class="form-control" id="validationCustom05" value="<?php echo $userInfo["user"]["city"] ;?>" required>
 
                                 <div class="invalid-feedback">
                                     Veuillez entrer une ville valide.
@@ -135,7 +132,7 @@ $userInfo = $_SESSION['user'];
                             </div>
                             <div class="col-md-3" style="width: 49%;">
                                 <label for="validationCustom05" class="form-label">Code Postale</label>
-                                <input type="number" class="form-control" id="validationCustom05" value="<?php echo $user['zip_code'] ;?>" required>
+                                <input type="number" class="form-control" id="validationCustom05" value="<?php echo $userInfo["user"]["zip_code"] ;?>" required>
                                 <div class="invalid-feedback">
                                     Veuillez entrer un code valide.
                                 </div>
@@ -143,7 +140,7 @@ $userInfo = $_SESSION['user'];
 
                             <div class="col-md-3" style="width: 49%;">
                                 <label for="validationCustom04" class="form-label">Date de naissance</label>
-                                <input type="date" class="form-control datepicker" value="<?php echo $user['birth_date'] ;?>" placeholder="14/10/2001">
+                                <input type="date" class="form-control datepicker" value="<?php echo $userInfo["user"]["birth_date"] ;?>" placeholder="14/10/2001">
 
                                 <div class="invalid-feedback">
                                     Veuillez entrer une date valide.
@@ -151,7 +148,7 @@ $userInfo = $_SESSION['user'];
                             </div>
                             <div class="col-md-3" style="width: 49%;">
                                 <label for="validationCustom05" class="form-label">Ville de naissance</label>
-                                <input type="text" class="form-control" id="validationCustom05" value="<?php echo $user['birth_city'] ;?>" required>
+                                <input type="text" class="form-control" id="validationCustom05" value="<?php echo $userInfo["user"]["birth_city"] ;?>" required>
                                 <div class="invalid-feedback">
                                     Veuillez entrer un code postal valide.
                                 </div>
@@ -159,7 +156,7 @@ $userInfo = $_SESSION['user'];
 
                             <div class="col-md-3" style="width: 49%;">
                                 <label for="validationCustom04" class="form-label">Nationalité</label>
-                                <input type="text" class="form-control" id="validationCustom05" value="<?php echo $user['origin'] ;?>" required>
+                                <input type="text" class="form-control" id="validationCustom05" value="<?php echo $userInfo["user"]["origin"] ;?>" required>
 
                                 <div class="invalid-feedback">
                                     Veuillez entrer une nationalité.
@@ -168,11 +165,11 @@ $userInfo = $_SESSION['user'];
                             </div>
                             <div class="col-md-3" style="width: 49%;">
                                 <label for="validationCustom05" class="form-label">Genre</label>
-                                <select class="form-select" id="validationCustom04" value="<?php echo $user['gender'] ;?>" required>
+                                <select class="form-select" id="validationCustom04"  required>
                                     <option selected disabled value="">Choisir...</option>
-                                    <option value="Homme">Homme</option>
-                                    <option value="Femme">Femme</option>
-                                    <option value="Autre">Autre</option>
+                                    <option value="Homme" <?=$userInfo["user"]["gender"] == 'Homme' ? ' selected="selected"' : '';?>>Homme</option>
+                                    <option value="Femme" <?=$userInfo["user"]["gender"] == 'Femme' ? ' selected="selected"' : '';?>>Femme</option>
+                                    <option value="Autre" <?=$userInfo["user"]["gender"] == 'Autre' ? ' selected="selected"' : '';?>>Autre</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     Veuillez entrer un code postal.
@@ -198,14 +195,14 @@ $userInfo = $_SESSION['user'];
                                     <div class="degree-city">
                                         <div class="col-md-4" style="width: 50%;">
                                             <label for="validationCustom01" class="form-label">Diplôme</label>
-                                            <select type="text" class="form-select"value="<?php echo $userEdu['diplomat'] ;?>" id="validationCustom01" required>
+                                            <select type="text" class="form-select"selected="<?php echo $userInfo["edu"][0]["diplomat"] ;?>" id="validationCustom01" required>
                                                 <option value="" selected disabled>Choisissez...</option>
-                                                <option value="bac"<?=$userEdu['diplomat'] == 'bac' ? ' selected="selected"' : '';?>>Bac</option>
-                                                <option value="bac2"<?=$userEdu['diplomat'] == 'bac2' ? ' selected="selected"' : '';?>>Bac+2</option>
-                                                <option value="bac3"<?=$userEdu['diplomat'] == 'bac3' ? ' selected="selected"' : '';?>>Bac+3</option>
-                                                <option value="bac5"<?=$userEdu['diplomat'] == 'bac5' ? ' selected="selected"' : '';?>>Bac+5</option>
-                                                <option value="ing"<?=$userEdu['diplomat'] == 'ing' ? ' selected="selected"' : '';?>>Ingenieur</option>
-                                                <option value="doctorat"<?=$userEdu['diplomat'] == 'doctorat' ? ' selected="selected"' : '';?>>Doctorat</option>
+                                                <option value="bac"<?=$userInfo["edu"][0]["diplomat"] == 'bac' ? ' selected="selected"' : '';?>>Bac</option>
+                                                <option value="bac2"<?=$userInfo["edu"][0]["diplomat"] == 'bac2' ? ' selected="selected"' : '';?>>Bac+2</option>
+                                                <option value="bac3"<?=$userInfo["edu"][0]["diplomat"] == 'bac3' ? ' selected="selected"' : '';?>>Bac+3</option>
+                                                <option value="bac5"<?=$userInfo["edu"][0]["diplomat"] == 'bac5' ? ' selected="selected"' : '';?>>Bac+5</option>
+                                                <option value="ing"<?=$userInfo["edu"][0]["diplomat"] == 'ing' ? ' selected="selected"' : '';?>>Ingenieur</option>
+                                                <option value="doctorat"<?=$userInfo["edu"][0]["diplomat"] == 'doctorat' ? ' selected="selected"' : '';?>>Doctorat</option>
                                             
                                     
                                             </select>
@@ -213,7 +210,7 @@ $userInfo = $_SESSION['user'];
                                         </div>
                                         <div class="col-md-4" style="width: 50%;">
                                             <label for="validationCustom02" class="form-label">Ville</label>
-                                            <input type="text" class="form-control" value="<?php echo $userEdu['city'] ;?>" id="validation" required>
+                                            <input type="text" class="form-control" value="<?php echo $userInfo['edu'][0]["city"] ;?>" id="validation" required>
 
                                         </div>
                                     </div>
@@ -224,7 +221,7 @@ $userInfo = $_SESSION['user'];
                                 <div class="col-md-4" style="width: 100%;">
                                     <label for="validationCustomUsername" class="form-label">Établissement</label>
                                     <div class="input-group has-validation">
-                                        <input type="text" class="form-control" value="<?php echo $userEdu['establishment'] ;?>" id="validationCustom" required data-ddg-inputtype="identities.addressCity">
+                                        <input type="text" class="form-control" value="<?php echo $userInfo['edu'][0]["establishment"] ;?>" id="validationCustom" required data-ddg-inputtype="identities.addressCity">
 
 
                                     </div>
@@ -232,13 +229,13 @@ $userInfo = $_SESSION['user'];
                                 <div class="edu-dates">
                                     <div class="col-md-3" style="width: 49%;">
                                         <label for="validationCustom04" class="form-label">Date de debut</label>
-                                        <input type="date" class="form-control edu-date" value="<?php echo $userEdu['b_date'] ;?>"placeholder="14/10/2001">
+                                        <input type="date" class="form-control edu-date" value="<?php echo $userInfo['edu'][0]["b_date"] ;?>"placeholder="14/10/2001">
 
 
                                     </div>
                                     <div class="col-md-3" style="width: 49%;">
                                         <label for="validationCustom04" class="form-label">Date d'obtention</label>
-                                        <input type="date" class="form-control edu-date" value="<?php echo $userEdu['f_date'] ;?>"placeholder="14/10/2001">
+                                        <input type="date" class="form-control edu-date" value="<?php echo $userInfo['edu'][0]["f_date"] ;?>"placeholder="14/10/2001">
 
                                     </div>
                                 </div>
@@ -247,7 +244,7 @@ $userInfo = $_SESSION['user'];
 
                                 <div class="col-md-6" style="width: 100%;">
                                     <label for="validationCustom03" class="form-label">Déscription</label>
-                                    <textarea type="textarea" class="form-control"  id="validationCustom03"><?php echo $userEdu['description'] ;?></textarea>
+                                    <textarea type="textarea" class="form-control"  id="validationCustom03"><?php echo $userInfo['edu'][0]["description"] ;?></textarea>
 
                                 </div>
 
@@ -290,12 +287,12 @@ $userInfo = $_SESSION['user'];
 
                                         <div class="col-md-4" style="width: 50%;">
                                             <label for="validationCustom01" class="form-label">Occupation</label>
-                                            <input type="text" class="form-control" value="<?php echo $userExp['role'] ;?>" id="validationCustom01" required>
+                                            <input type="text" class="form-control" value="<?php echo $userInfo['exp'][0]["role"] ;?>" id="validationCustom01" required>
 
                                         </div>
                                         <div class="col-md-4" style="width: 50%;">
                                             <label for="validationCustom02" class="form-label">Ville</label>
-                                            <input type="text" class="form-control" id="validation" value="<?php echo $userExp['city'] ;?>" required>
+                                            <input type="text" class="form-control" id="validation" value="<?php echo $userInfo['exp'][0]["city"] ;?>" required>
 
 
                                         </div>
@@ -307,7 +304,7 @@ $userInfo = $_SESSION['user'];
                                 <div class="col-md-4" style="width: 100%;">
                                     <label for="validationCustomUsername" class="form-label">Entreprise</label>
                                     <div class="input-group has-validation">
-                                        <input type="text" class="form-control" id="validationCustom" value="<?php echo $userExp['entreprise'] ;?>" required data-ddg-inputtype="identities.addressCity">
+                                        <input type="text" class="form-control" id="validationCustom" value="<?php echo $userInfo['exp'][0]["entreprise"] ;?>" required data-ddg-inputtype="identities.addressCity">
 
 
                                     </div>
@@ -315,12 +312,12 @@ $userInfo = $_SESSION['user'];
                                 <div class="exp-dates">
                                     <div class="col-md-2" style="width: 49%;">
                                         <label for="validationCustom04" class="form-label">Date de début</label>
-                                        <input type="date" class="form-control edu-date" value="<?php echo $userExp['b_date'] ;?>" placeholder="14/10/2001">
+                                        <input type="date" class="form-control edu-date" value="<?php echo $userInfo['exp'][0]["b_date"] ;?>" placeholder="14/10/2001">
 
                                     </div>
                                     <div class="col-md-3" style="width: 49%;">
                                         <label for="exp-end-date" class="form-label">Date de fin</label>
-                                        <input type="date" class="form-control edu-date" id="exp-end-date" value="<?php echo $userExp['f_date'] ;?>" placeholder="14/10/2001">
+                                        <input type="date" class="form-control edu-date" id="exp-end-date" value="<?php echo $userInfo['exp'][0]["f_date"] ;?>" placeholder="14/10/2001">
 
                                     </div>
                                 </div>
@@ -329,14 +326,10 @@ $userInfo = $_SESSION['user'];
 
                                 <div class="col-md-6" style="width: 100%;">
                                     <label for="exp-desc" class="form-label">Déscription</label>
-                                    <textarea type="textarea" class="form-control"  id="exp-desc"><?php echo htmlspecialchars($userExp['description']) ;?></textarea>
+                                    <textarea type="textarea" class="form-control"  id="exp-desc"><?php echo htmlspecialchars($userInfo['exp'][0]["description"]) ;?></textarea>
 
 
                                 </div>
-
-
-
-
 
                                 <div class="btns">
                                     <button class="delete-btn-exp" type="button">Supprimer</button>
@@ -375,7 +368,7 @@ $userInfo = $_SESSION['user'];
 
                                         <div class="col-md-4" style="width: 50%;">
                                             <label for="" class="form-label">Compétence</label>
-                                            <input type="text" class="form-control" value="<?php $userSkills["skill_name"];?>" id="validationCustom01" required>
+                                            <input type="text" class="form-control" value="<?php $userInfo["skills"][0]["skill_name"];?>" id="validationCustom01" required>
 
                                         </div>
                                         <div class="col-md-4" style="width: 50%;">
@@ -431,7 +424,7 @@ $userInfo = $_SESSION['user'];
 
                                         <div class="col-md-4" style="width: 50%;">
                                             <label for="validationCustom01" class="form-label">Langue</label>
-                                            <input type="text" class="form-control" name="lang-input-0" id="lang-input-0">
+                                            <input type="text" class="form-control" value="<?php $userInfo["lang"][0]["lang"];?>" name="lang-input-0" id="lang-input-0">
 
                                         </div>
                                         <div class="col-md-4" style="width: 50%;">

@@ -1,8 +1,10 @@
 <?php
-
+session_start();
 $targetDir = "/Applications/XAMPP/xamppfiles/htdocs/RecruitMe/controllers/uploads/";
 $fileName = basename($_FILES["file"]["name"]);
 $targetFilePath = $targetDir . $fileName;
+
+$_SESSION["emailupload"] = $targetFilePath;
 
 
 
