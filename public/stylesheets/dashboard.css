@@ -12,6 +12,7 @@ body {
   background: #e3f2fd;
 }
 nav {
+  z-index: 99;
   position: fixed;
   top: 0;
   left: 0;
@@ -19,7 +20,7 @@ nav {
   width: 100%;
   display: flex;
   align-items: center;
-  background: #fff;
+  background: #00AFF0;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
 }
 nav .logo {
@@ -28,13 +29,15 @@ nav .logo {
   margin: 0 24px;
 }
 .logo .menu-icon {
-  color: #333;
+  z-index: 99;
+  color: rgb(255, 255, 255);
   font-size: 24px;
   margin-right: 14px;
   cursor: pointer;
 }
 .logo .logo-name {
-  color: #333;
+  z-index: 99;
+  color: rgb(255, 255, 255);
   font-size: 22px;
   font-weight: 500;
 }
@@ -72,7 +75,7 @@ nav.open .sidebar {
   transition: 0.3s;
 }
 .lists .nav-link:hover {
-  background-color: #4070f4;
+  background-color: #00AFF0;
 }
 .nav-link .icon {
   margin-right: 14px;
@@ -101,13 +104,39 @@ nav.open .sidebar {
 }
 nav.open ~ .overlay {
   opacity: 1;
+  z-index: 1;
   left: 260px;
   pointer-events: auto;
 }
 
 
 .content-wrapper{
+  display: none;
   position: absolute;
   height: 100%;
   width: 100%;
 }
+.active{
+  display: block;
+}
+
+ul.lists {
+  padding-left: 10px;
+}
+
+#logout:hover{
+  background-color: #ff0000;
+}
+
+#logout:hover i{
+  color: white;
+
+}
+
+
+#logout:hover .link{
+  color: white;
+
+}
+
+

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 class SignupContr extends Signup{
    //variables are the properties inside the class
      private $username;
@@ -53,7 +53,7 @@ class SignupContr extends Signup{
       
       if($checked==true){
          $this->setUser($this->username,$this->email, $this->password, $this->user_type);
-
+         $_SESSION["token"] = "true";
       }
       else{
          $this->checkEmail($this->username,$this->email);

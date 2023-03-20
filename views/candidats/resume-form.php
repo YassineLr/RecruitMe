@@ -104,7 +104,7 @@
                                 <label for="validationCustomUsername" class="form-label">E-mail</label>
                                 <div class="input-group has-validation">
                                     <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                    <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required data-ddg-inputtype="identities.emailAddress">
+                                    <input type="email" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required data-ddg-inputtype="identities.emailAddress">
                                     <div class="invalid-feedback">
                                         Veuillez entrer un e-mail valide.
                                     </div>
@@ -143,7 +143,7 @@
                             </div>
                             <div class="col-md-3" style="width: 49%;">
                                 <label for="validationCustom05" class="form-label">Code Postale</label>
-                                <input type="text" class="form-control" id="validationCustom05" required>
+                                <input type="number" class="form-control" id="validationCustom05" required>
                                 <div class="invalid-feedback">
                                     Veuillez entrer un code valide.
                                 </div>
@@ -151,7 +151,7 @@
 
                             <div class="col-md-3" style="width: 49%;">
                                 <label for="validationCustom04" class="form-label">Date de naissance</label>
-                                <input type="text" class="form-control datepicker" placeholder="14/10/2001">
+                                <input type="date" class="form-control datepicker" placeholder="14/10/2001">
 
                                 <div class="invalid-feedback">
                                     Veuillez entrer une date valide.
@@ -237,13 +237,13 @@
                                 <div class="edu-dates">
                                     <div class="col-md-3" style="width: 49%;">
                                         <label for="validationCustom04" class="form-label">Date de debut</label>
-                                        <input type="text" class="form-control edu-date" placeholder="14/10/2001">
+                                        <input type="date" class="form-control edu-date" placeholder="14/10/2001">
 
 
                                     </div>
                                     <div class="col-md-3" style="width: 49%;">
                                         <label for="validationCustom04" class="form-label">Date d'obtention</label>
-                                        <input type="text" class="form-control edu-date" placeholder="14/10/2001">
+                                        <input type="date" class="form-control edu-date" placeholder="14/10/2001">
 
                                     </div>
                                 </div>
@@ -320,12 +320,12 @@
                                 <div class="exp-dates">
                                     <div class="col-md-2" style="width: 49%;">
                                         <label for="validationCustom04" class="form-label">Date de début</label>
-                                        <input type="text" class="form-control edu-date" placeholder="14/10/2001">
+                                        <input type="date" class="form-control edu-date" placeholder="14/10/2001">
 
                                     </div>
                                     <div class="col-md-3" style="width: 49%;">
                                         <label for="exp-end-date" class="form-label">Date de fin</label>
-                                        <input type="text" class="form-control edu-date" id="exp-end-date" placeholder="14/10/2001">
+                                        <input type="date" class="form-control edu-date" id="exp-end-date" placeholder="14/10/2001">
 
                                     </div>
                                 </div>

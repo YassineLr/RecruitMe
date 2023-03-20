@@ -1,5 +1,10 @@
+
+<?php
+// require_once '/RecruitMe/controllers/candidatforms/send-resume.php';
+
+?>
+
 <!DOCTYPE html>
-<!-- Coding by CodingLab | www.codinglabweb.com-->
 <html lang="en">
 
 <head>
@@ -12,7 +17,12 @@
   <link rel="stylesheet" href="../../public/stylesheets/resume-form.css">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  <script>
+    if(!localStorage.getItem("token")){
+      window.location.href = "/RecruitMe/views/client/sign-up-login.php"
+    };
+  </script>
+  
   <!-- jQuery library -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
@@ -25,14 +35,24 @@
 
   <!-- Boxicons CSS -->
   <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.3.0/css/all.css">
 </head>
 
 <body>
-  <div class="content-wrapper" id="content-wrapper">
-    <?php
-    include('/RecruitMe/views/candidats/resume-form.php');
-    include('/RecruitMe/public/javascript/resume-form.js');
-    ?>
+  <div class="content-wrapper profile active" id="content-wrapper-profile">
+    
+  </div>
+  <div class="content-wrapper opportunities" id="content-wrapper-opportunities">
+    
+  </div>
+  <div class="content-wrapper messages" id="content-wrapper-messages">
+    
   </div>
   <nav>
     <div class="logo">
@@ -60,7 +80,7 @@
               <span class="link">Opportunité</span>
             </a>
           </li>
-          <li class="list">
+          <li id="message" class="list">
             <a href="#" class="nav-link">
               <i class="bx bx-message-rounded icon"></i>
               <span class="link">Messages</span>
@@ -82,7 +102,7 @@
             </a>
           </li>
           <li class="list">
-            <a href="#" class="nav-link">
+            <a href="/RecruitMe/controllers/includes/logout.php" id="logout" class="nav-link">
               <i class="bx bx-log-out icon"></i>
               <span class="link">Logout</span>
             </a>
@@ -93,11 +113,6 @@
   </nav>
 
   <section class="overlay"></section>
-  <!-- 
-  <script>
-    var input = document.querySelector("#phone");
-    window.intlTelInput(input);
-  </script> -->
 
   <script src="/RecruitMe/public/javascript/dashboard-candidat.js"></script>
 </body>

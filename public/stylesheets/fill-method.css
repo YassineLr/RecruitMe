@@ -51,6 +51,7 @@
 }
 
 .fill-cv {
+    position: relative;
     display: flex;
     flex-direction: column;
     background-color: #00aff0;
@@ -118,7 +119,9 @@
 
 .right-resume {
     position: absolute;
-    left: -100px;
+    left: -150px;
+    top: -170px;
+
 }
 
 
@@ -139,4 +142,10 @@ input[type=file] {
     font-size: 30px;
     font-weight: 400;
     max-width: 250px;
+}
+
+.wrong-resume {
+    position: absolute;
+    top: -170px;
+    left: -325px;
 }

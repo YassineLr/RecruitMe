@@ -1,25 +1,5 @@
 
 
-
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-
-
-var today = new Date();
-var minDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
-
-$('.datepicker').datepicker({
-    format: 'yyyy/mm/dd',
-    endDate: minDate
-});
-
-$('.edu-date').datepicker({
-    startDate: '2023-01-01'
-});
-
-
-
-
-
 var input = document.querySelector("#phone");
 window.intlTelInput(input);
 
@@ -167,7 +147,6 @@ const addBtnComp = document.querySelector(".add-btn-comp");
 var compInputs = document.querySelectorAll('.form-competence .form-control, .skill-select');
 
 for (var i = 0; i < compInputs.length; i++)
-    // compInputs[i].id = 'skill-input-' + i;
     compInputs[i].name = 'skill-input-' + i;
 
 function addSkillsForm() {
@@ -188,7 +167,6 @@ function addSkillsForm() {
     // Set their ids
 
     for (var i = 0; i < compInputs.length; i++)
-        // compInputs[i].id = 'skill-input-' + i;
         compInputs[i].name = 'skill-input-' + i;
     for (var i = 0; i < compForms.length; i++) {
         compForms[i].id = 'comp-form-' + i;
@@ -225,7 +203,6 @@ const addBtnLang = document.querySelector(".add-btn-lang");
 var langInputs = document.querySelectorAll('.form-language .form-control, .lang-select');
 
 for (var i = 0; i < langInputs.length; i++)
-    // langInputs[i].id = 'lang-input-' + i;
     langInputs[i].name = 'lang-input-' + i;
 
 function addLangsForm() {
@@ -586,3 +563,4 @@ function previewImage(event) {
         reader.readAsDataURL(input.files[0]);
     }
 }
+

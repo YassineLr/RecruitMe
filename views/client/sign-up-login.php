@@ -1,3 +1,14 @@
+<?php 
+
+session_start();
+if(isset($_SESSION["token"])){
+    header("location: /RecruitMe/controllers/candidat-forms/dashboard.php");
+
+}
+
+?>
+
+
 <!DOCTYPE html>
 
     <html lang="en">
@@ -12,7 +23,10 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
         <title>Login and Signup Form </title>
-
+        <script>
+            // window.history.forward();
+            // localStorage.setItem("token", "userToken");
+        </script>
         <!-- CSS -->
         <link rel="stylesheet" href="/RecruitMe/public/stylesheets/sign-up-login.css">
                 
