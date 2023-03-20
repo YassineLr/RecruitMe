@@ -193,7 +193,7 @@ header {
   cursor: pointer;
 }
 
-.info-wrapper {
+.lesson-wrapper {
   padding-bottom: 80px;
   padding-left: 5%;
   padding-right: 5%;
@@ -211,16 +211,16 @@ header {
   font-weight: normal;
 }
 
-.info {
+.lesson {
   float: left;
   width: 25%;
 }
 
-.info-icon {
+.lesson-icon {
   position: relative;
 }
 
-.info-icon p {
+.lesson-icon p {
   position: absolute;
   top: 44%;
   width: 100%;
@@ -283,4 +283,22 @@ footer {
 .in-footer{
   font-size: 1.5em;
 }
+
+ul {
+  list-style: none;
+}
+
+.lst{
+  margin-bottom: 20px;
+}
+
+.map{
+  border-style: solid;
+  border-width: 5px;
+  margin-top: 12px;
+  border: #000 10px;
+  width: 80%;
+  height: auto;
+}
+
 

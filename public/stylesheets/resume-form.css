@@ -1,140 +1,116 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
 
-*{
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-body{
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #293237;
-}
-.container{
+#logo {
+    z-index: 99;
     position: relative;
-    max-width: 900px;
-    width: 100%;
-    border-radius: 6px;
-    padding: 30px;
-    margin: 0px 15px;
-    background-color: #fff;
-    box-shadow:  0px 5px 10px rgba(0, 0, 0, 0.1);
+    top: 0;
+    color: white;
+    margin-left: 10px;
+
 }
- .container header{
-    position: relative;
-    font-size: 20px;
-    font-weight: 600;
-    color: #333;
- }
- .container header::before{
-    content: "";
-    position: absolute;
+
+.pattern1 {
+    position: fixed;
+    z-index: 0;
+    top: 0px;
     left: 0;
-    bottom: -2px;
-    height: 3px;
-    width: 27px;
-    border-radius: 8px;
-    background-color: #293237;
-
- }
- .container form{
-    position: relative;
-    margin-top: 16px;
-    min-height: 500px;
-    background-color: #fff;
- }
-.container form .personel{
-    margin-top: 30px; 
-}
-.container form .title{
-    display: block;
-    margin-bottom: 8px;
-    font-size: 16px; 
-    font-weight: 500;
-    margin: 6px 0px;
-    color: #333;
-}
-
-.select-civilite {
-    height: 42px;
-    position: relative;
-    font-family: Arial;
-}
-
-.civi{
     width: 100%;
-    height: 100%;
+    height: 100px;
+    background-color: #6c816b;
 }
 
+.pattern {
+    position: fixed;
+    z-index: 0;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    transform: skewY(-6deg);
+    background-color: #6c816b;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-.container form .fields{   /*put item in the center */
+
+}
+
+.container {
+    margin-top: 5%;
+    position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between; 
-    flex-wrap: wrap;
+
 }
-form .fields .input-field{
+
+
+.form-section {
+    position: relative;
+    display: inline-block;
+    margin: 2% 2%;
+}
+
+.edu-header,
+.exp-header,
+.comp-header,
+.lang-header {
+    font-size: 30px;
     display: flex;
-    width: calc(100% / 3 - 15px);
-  /*  background-color: red;*/
-    flex-direction: column; 
-    margin: 4px 0;
+    column-gap: 10px;
+    align-items: baseline;
 }
-.input-field label{
-    font-size: 12px;
-    font-weight: 500;
-    color: #2e2e2e ;
-}
-.input-field input{
-    outline: none;
-    font-size: 14px;
-    font-weight: 400;
-    color: #333;
+
+.form-education,
+.form-resume,
+.form-experience,
+.form-competence, 
+.form-language {
+    width: 100%;
+    max-width: 700px;
     border-radius: 5px;
-    border: 1px solid #aaa;
-    padding: 0 15px;
-    height: 42px; 
-    margin: 8px 0;
-}
-.input-field input:is(:focus, :valid){
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.318);
-}
-.input-field input[type="date"] {
-    color: #707070; 
-}
-.input-field input[type="date"]:valid{
-    color: #707070; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+    background-color: white;
 }
 
-.first-inputs{
+.first-inputs {
+    display: flex;
+    width: 100%;
+}
+
+.name {
+    width: 100%;
+}
+
+.degree-city {
     display: inline-flex;
-    width: 100%;
-}
-.name-input {
-    width: 100%;
-}
-.name-input input{
-    width: 100%;
-    
+    column-gap: 6px;
+    width: 99%;
+
 }
 
-.upload-image{
+
+.upload-image {
     display: flex;
     width: 50%;
+    height: 100%;
     position: relative;
-   
+
 }
-.upload-image img{
+
+.upload-image img {
+    height: 130px;
+    width: 130px;
     border-radius: 50%;
     border: 6px solid #eaeaea;
 
 }
-.upload-image .round{
+
+.upload-image .round {
     position: relative;
-    background: #00B4FF;
+    background: #6c816b;
     width: 32px;
     height: 32px;
     line-height: 33px;
@@ -143,83 +119,192 @@ form .fields .input-field{
     overflow: hidden;
 }
 
-.upload-image .round input[type='file']{
+.upload-image .round input[type='file'] {
     position: absolute;
     transform: scale(2);
     opacity: 0;
 }
-input[type='file']::-webkit-file-upload-button{
+
+input[type='file']::-webkit-file-upload-button {
     cursor: pointer;
 }
 
-.container form button{
+.email-num {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    column-gap: 10px;
+}
+
+.intl-tel-input {
+    display: table-cell;
+}
+
+.intl-tel-input .selected-flag {
+    z-index: 4;
+}
+
+.intl-tel-input .country-list {
+    z-index: 5;
+}
+
+.input-group .intl-tel-input .form-control {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 0;
+}
+
+.iti.iti--allow-dropdown {
+    width: 100%;
+}
+
+.col-12 {
+    display: flex;
+    justify-content: center;
+}
+
+.col-12 .sub-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.final-sub{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10%;
+    
+
+}
+button.btn.btn-primary.final-submit{
+    background-color: #6c816b;
+    border: none;
+    font-size: 20px;
+    padding: 10px 20px 10px;
+
+}
+
+.btns {
+    display: flex;
+    justify-content: right;
+    column-gap: 3px;
+    margin-top: 10px;
+}
+
+.delete-btn,
+.delete-btn-exp,
+.delete-btn-comp,
+.delete-btn-lang {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 15px 8px;
+    border-radius: 5px;
+}
+
+
+
+.add-btn-exp,
+.add-btn-edu,
+.add-btn-comp,
+.add-btn-lang {
     position: relative;
     display: flex;
-    align-items: center ;
+    /* justify-content: center; */
+    flex-direction: column;
+    bottom: 39px;
+
+}
+
+button.btn.btn-primary.add-btn-exp,
+button.btn.btn-primary.add-btn-edu,
+button.btn.btn-primary.add-btn-comp,
+button.btn.btn-primary.add-btn-lang{
+    display: inline-block;
+    align-items: center;
+    width: 300px;
+    border: 2px dashed;
+    background: none;
+    color: rgb(71, 71, 71);
+}
+
+
+
+.dates-exp {
+    display: flex;
+    column-gap: 5px;
+}
+
+
+.exp-dates, .edu-dates{
+    display: flex;
+    column-gap: 10px;
+}
+
+.form-educ, .form-exp{
+    row-gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.nav-follow{
+    list-style: none;
+    font-size: 35px;
     justify-content: center;
-    height: 45px;
-    max-width: 200px;
-    width: 100%;
-    background-color: #4070f4;
-    border: none;
-    outline: none;
-    color: #fff;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 22%;
+    width: 85px;
+    height: 334px;
     border-radius: 5px;
-    margin: 25px 0px;
-    background-color: #4070f4;
-    transition: all 0.3s linear;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    z-index: 0;
     cursor: pointer;
+    margin-left: 10px;
 }
-form button:hover{
-    background-color: #265df2;
-}
-.wrap{
+
+.side-bar-container{
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
-    padding-bottom: 10px;
+    width: 800px;
+    flex-direction: row-reverse;
 }
-.add{
-    text-decoration: none;
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    background: #4070f4;
-    font-size: 30px;
-    font-weight: bold;
-    color: #fff;
+
+.nav-follow-item{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-/*dynamic inpput*/
-
-.delete{
-    text-decoration: none;
-    display: inline-block;
-    
-    color: #777777;
-    font-size: 30px;
-    font-weight: bold;
-    width: 20px;
-    height: 20px;
-    margin-left: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-     
-    
-}
-
-.field2 {
-    margin: 10px;
-}
-
-.desc {
     width: 100%;
+    height: 30%;
+    transition: 0.3s;
+
+
 }
 
-.flex{
-    display: block;
+#pers-scroll:hover, #educ-scroll:hover, #exp-scroll:hover, #skill-scroll:hover, #lang-scroll:hover{
+    color: red;
+
+}
+
+
+.side-bar-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.side-bar-clicked{
+    color: red;
+    font-size: 40px;
+}
+
+.pers-inputs-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 15px;
+    row-gap: 15px;
 }
