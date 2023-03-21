@@ -94,7 +94,7 @@ $userInfo = $_SESSION['user'];
                     <div class="form-section form-resume" id="form-resume">
                         <div class="first-inputs">
                             <div class="upload-image">
-                                <img src="../../public/images/noprofil.jpg" width="100px" height="100px" alt="" id="preview">
+                                <img src="<?php echo $userInfo["user"]["photo"]?>" width="100px" height="100px" alt="" id="preview">
                                 <div class="round">
                                     <input type="file" accept="image/*" onchange="previewImage(event)">
                                     <i class="fa fa-camera" style="color: #fff;"></i>

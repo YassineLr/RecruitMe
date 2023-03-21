@@ -65,7 +65,7 @@
 
                 </li>
             </ul>
-            <form class="row g-3 needs-validation formPers" action="/RecruitMe/controllers/candidat-forms/send-resume.php" method="POST" novalidate id="pers-form">
+            <form class="row g-3 needs-validation formPers" action="/RecruitMe/controllers/candidat-forms/send-resume.php" method="POST" novalidate id="pers-form" enctype="multipart/form-data">
 
                 <div class="container">
 

@@ -29,6 +29,7 @@ overlay.addEventListener("click", () => {
 const profileLink = document.getElementById("profile-link");
 const contentProfile = document.getElementById("content-wrapper-profile");
 const contentOpps = document.getElementById("content-wrapper-opportunities");
+const contentMessages = document.getElementById("content-wrapper-messages");
 const listLinks = document.querySelectorAll(".lists > li > a");
 
 
@@ -58,6 +59,15 @@ $("#content-wrapper-opportunities").load("/RecruitMe/controllers/sign-up-login/v
 
 });
 
+$("#content-wrapper-messages").load("/RecruitMe/controllers/messagerie/users.php", function () {
+
+  //   $.getScript("/RecruitMe/public/javascript/dashboard-form-candidat.js", function () {
+
+  //   });
+
+});
+
+
 $("#profile-link").click(function () {
 
 
@@ -72,17 +82,24 @@ listLinks.forEach(link => {
       if (!contentProfile.classList.contains("active")) {
         contentProfile.classList.add("active");
         contentOpps.classList.remove("active");
+        contentMessages.classList.remove("active");
 
       }
 
     }
-    else {
+    else if(link.id == "opp-link"){
       if (!contentOpps.classList.contains("active")) {
         contentOpps.classList.add("active");
         contentProfile.classList.remove("active");
+        contentMessages.classList.remove("active");
       }
-
-      console.log("efff");
+    }
+    else{
+      if (!contentMessages.classList.contains("active")) {
+        contentMessages.classList.add("active");
+        contentProfile.classList.remove("active");
+        contentOpps.classList.remove("active");
+      }
     }
   })
 });
