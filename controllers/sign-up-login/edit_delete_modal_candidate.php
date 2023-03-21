@@ -34,7 +34,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form method="POST" action="edit.php?id=<?php echo $row['id']; ?>">
+          <form method="POST" action="/RecruitMe/controllers/sign-up-login/edit.php?id=<?php echo $row['id']; ?>">
             <div class="mb-3 row">
               <label class="col-sm-2 col-form-label">Catégorie</label>
               <div class="col-sm-10">
@@ -136,7 +136,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <a href="delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Yes</a>
+          <a href="/RecruitMe/controllers/sign-up-login/delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Yes</a>
         </div>
       </div>
     </div>

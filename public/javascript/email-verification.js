@@ -124,7 +124,7 @@ inputElements.forEach((ele, index) => {
 
                     }
                     else {
-                        window.location.href = "/RecruitMe/views/candidats/fill-method.php"
+                        window.location.href = "/RecruitMe/controllers/candidat-forms/dashboard-rec.php"
 
                     }
 

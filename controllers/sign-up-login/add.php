@@ -28,7 +28,7 @@
 
 
     //change the file to either view-resume or page 
-     header('location: /RecruitMe/views/recruters/jobs.php');
+     header('location: /RecruitMe/controllers/candidat-forms/dashboard-rec.php');
 
 
      

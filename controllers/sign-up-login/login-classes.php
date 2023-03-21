@@ -39,12 +39,24 @@ class Login extends Dbhandler
                 header("location: ../../views/client/sign-up-login.php?error=stmtfailed");
                 exit();
             }
+
+        $stmt = $this->connect()->prepare('SELECT user_type FROM users WHERE email = ? OR password = ?;');
+        $stmt->execute(array($email, $password));
+        $userType = $stmt->fetch()[0];
+        // $_SESSION["usertype"] = $userType;
+
+        if($userType=="recruteur"){
+            $_SESSION["usertype"] = "recruteur";
+   
+
+        }
+        if($userType == "candidat"){
+
             $userinfos = array("user"=>[],"edu"=>[],"exp"=>[],"skills"=>[],"lang"=>[]);
             session_start();
             $stmt = $this->connect()->prepare('SELECT * FROM candidats WHERE email = ?');
             if ($stmt->execute([$email])) {
                 $userinfo = $stmt->fetch(PDO::FETCH_ASSOC);
-                // $_SESSION["user"] = $userinfo;
                 $userinfos["user"] = $userinfo;
 
                 $stmt = null;
@@ -78,6 +90,10 @@ class Login extends Dbhandler
                     
                 }
                 $_SESSION["user"] = $userinfos;
+                $_SESSION["usertype"] = "candidat";
+        }
+        
+            
 
 
                 // try{

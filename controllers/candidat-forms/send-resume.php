@@ -58,21 +58,22 @@ class CandidatsResume extends Dbhandler
             $user_exist = $stmt->fetch();
             echo $email;
             echo $user_exist[0];
+            $emailPath = $_SESSION["emailupload"];
             $pers_array[12] = $user_exist[0];
+            $pers_array[13] = $emailPath;
 
 
             $user = null;
 
             // $_SESSION["userId"] = $user[0];
-            echo "erjg";
+    
 
             if ($user_exist) {
 
                 if ($user) {
-                    echo "erjg";
                     header("location: /RecruitMe/controllers/candidat-forms/dashboard.php");
                 } else {
-                    $stmt = $this->connect()->prepare('INSERT INTO candidats (photo, fname, lname, email, phone, adress, city, zip_code, birth_date, birth_city, origin, gender,id_user) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+                    $stmt = $this->connect()->prepare('INSERT INTO candidats (photo, fname, lname, email, phone, adress, city, zip_code, birth_date, birth_city, origin, gender,id_user,resume) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
                     $stmt->execute($pers_array);
                     $stmt = null;
 
