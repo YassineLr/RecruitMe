@@ -8,7 +8,7 @@ class Login extends Dbhandler
     {
 
         $stmt = $this->connect()->prepare('SELECT * FROM users WHERE email = ? OR password = ?;');
-
+        
         if (!$stmt->execute(array($email, $password))) {
             $stmt = null;
 
@@ -24,6 +24,7 @@ class Login extends Dbhandler
 
         $pwdHashed = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $checkPwd = password_verify($password, $pwdHashed[0]["password"]);
+        $user_id = $pwdHashed[0]["id"];
 
 
         if ($checkPwd == false) {
@@ -31,6 +32,7 @@ class Login extends Dbhandler
             header("location: ../../views/client/sign-up-login.php?error=wrongpassword");
             exit();
         } elseif ($checkPwd == true) {
+            
             $stmt = $this->connect()->prepare('SELECT password FROM users WHERE  email = ? AND password = ?;');
 
             if (!$stmt->execute(array($email, $password))) {
@@ -43,10 +45,11 @@ class Login extends Dbhandler
         $stmt = $this->connect()->prepare('SELECT user_type FROM users WHERE email = ? OR password = ?;');
         $stmt->execute(array($email, $password));
         $userType = $stmt->fetch()[0];
-        // $_SESSION["usertype"] = $userType;
+        $_SESSION["id_user"] = $user_id;
 
         if($userType=="recruteur"){
             $_SESSION["usertype"] = "recruteur";
+            $_SESSION["id_rec"] = $user_id;
    
 
         }

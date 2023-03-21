@@ -76,12 +76,12 @@ if(!isset($_SESSION["token"])){
             </a>
           </li>
           <li class="list">
-            <a href="#" class="nav-link">
+            <a href="#" id="opp-link" class="nav-link">
               <i class="bx bx-bar-chart-alt-2 icon"></i>
               <span class="link">Opportunité</span>
             </a>
           </li>
-          <li id="message" class="list">
+          <li id="message" id="messages-link" class="list">
             <a href="#" class="nav-link">
               <i class="bx bx-message-rounded icon"></i>
               <span class="link">Messages</span>

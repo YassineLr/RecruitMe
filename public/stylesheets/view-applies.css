@@ -2,8 +2,13 @@
     margin-top: 90px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
+
+div#resume-content {
+    display: list-item;
+}
 .table{
     width: 100%;
 

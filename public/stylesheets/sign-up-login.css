@@ -9,7 +9,7 @@
 }
 
 .header-patern {
-    background-color: #6c816b;
+    background-color: #00b4ff;
     width: 100%;
     height: 30%;
     position: fixed;
@@ -103,13 +103,13 @@ form {
 
 .field button {
     color: #fff;
-    background-color: #6c816b;
+    background-color: #0171d3;
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
 .field button:hover {
-    background-color: #445243;
+    background-color: #016dcb;
 }
 
 .form-link {
@@ -125,7 +125,7 @@ form {
 }
 
 .form a {
-    color: #6c816b;
+    color: #0171d3;
     text-decoration: none;
 }
 

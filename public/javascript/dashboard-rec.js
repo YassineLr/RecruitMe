@@ -68,6 +68,13 @@ $("#content-wrapper-opportunities").load("/RecruitMe/controllers/sign-up-login/v
 
 });
 
+// $("#content-wrapper-messages").load("/RecruitMe/controllers/messagerie/users.php", function () {
+
+//     //   $.getScript("/RecruitMe/public/javascript/dashboard-form-candidat.js", function () {
+
+//     //   });
+
+// });
 
 listLinks.forEach(link => {
     link.addEventListener("click", (e) => {

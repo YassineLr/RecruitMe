@@ -8,7 +8,7 @@ class CandidatsResume extends Dbhandler
 {
     public function setResume($form)
     {
-
+       
         $pers_count = 0;
         $edu_count = 0;
         $exp_count = 0;
@@ -35,7 +35,7 @@ class CandidatsResume extends Dbhandler
 
 
         for ($x = 0; $x < $pers_count; $x++) {
-            $pers_array[$x] = $form["pers-input-" . $x];
+            $pers_array[$x] = $form["pers-input-" . $x+1];
         }
 
         for ($x = 0; $x < 6; $x++) {
@@ -52,28 +52,54 @@ class CandidatsResume extends Dbhandler
 
 
         try {
+            
+
             $email = $form["pers-input-3"];
             $stmt = $this->connect()->prepare('SELECT id FROM users WHERE email = ?');
             $stmt->execute([$email]);
             $user_exist = $stmt->fetch();
-            echo $email;
-            echo $user_exist[0];
+        
             $emailPath = $_SESSION["emailupload"];
-            $pers_array[12] = $user_exist[0];
-            $pers_array[13] = $emailPath;
-
-
+        
+            
+            $targetDir = "/Applications/XAMPP/xamppfiles/htdocs/RecruitMe/controllers/uploads/";
+            $targetDirectory = "/RecruitMe/controllers/uploads/";
+            
+            $n1 = date("y-m-d");
+            
+            $fileName = $_FILES["pers-input-0"]["name"];
+ 
+            $extention = explode(".",$fileName);
+      
+            $extention = end($extention);
+      
+            $newFileName = $user_exist[0]."img".$n1.".".$extention;
+        
+            $tmpName = $_FILES["pers-input-0"]["tmp_name"];
+            $targetFilePathK = $targetDirectory . $newFileName;
+            $targetFilePath = $targetDir . $newFileName;
+       
+            move_uploaded_file($tmpName,$targetFilePath);
+            $pers_array[13]= $targetFilePathK;
+            $pers_array[14]= (2* $edu_count)+(3 * $exp_count/6)+($skill_count/2)+(4* $lang_count/2);
+            $pers_array[11] = $user_exist[0];
+            $pers_array[12] = $emailPath;
             $user = null;
 
             // $_SESSION["userId"] = $user[0];
-    
+
 
             if ($user_exist) {
 
                 if ($user) {
-                    header("location: /RecruitMe/controllers/candidat-forms/dashboard.php");
+                    header("location: /RecruitMe/views/client/sign-up-login.php");
                 } else {
-                    $stmt = $this->connect()->prepare('INSERT INTO candidats (photo, fname, lname, email, phone, adress, city, zip_code, birth_date, birth_city, origin, gender,id_user,resume) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+                    $stmt = $this->connect()->prepare('INSERT INTO candidats (fname, lname, email, phone, adress, city, zip_code, birth_date, birth_city, origin, gender, id_user, resume,photo,score) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+                    echo "<pre>";
+                    print_r($pers_array);
+                
+                    echo "</pre>";
+                    echo sizeof($pers_array);
                     $stmt->execute($pers_array);
                     $stmt = null;
 
@@ -96,9 +122,7 @@ class CandidatsResume extends Dbhandler
                         }
                         $edu_array[6] = $user[0];
 
-                        echo "<pre>";
-                        print_r($edu_array);
-                        echo "</pre>";
+        
 
                         $stmt = $this->connect()->prepare('INSERT INTO education (diplomat, establishment, city, b_date, f_date, description, id_candidat) VALUES (?, ?, ?, ?, ?, ?, ?)');
                         $stmt->execute($edu_array);
@@ -118,9 +142,7 @@ class CandidatsResume extends Dbhandler
                         }
                         $exp_array[6] = $user[0];
 
-                        echo "<pre>";
-                        print_r($exp_array);
-                        echo "</pre>";
+          
 
                         $stmt = $this->connect()->prepare('INSERT INTO experience (role, city, entreprise, b_date, f_date, description, id_candidat) VALUES (?, ?, ?, ?, ?, ?, ?)');
                         $stmt->execute($exp_array);
@@ -163,16 +185,11 @@ class CandidatsResume extends Dbhandler
                         }
                         $lang_array[2] = $user[0];
 
-                        echo "<pre>";
-                        print_r($lang_array);
-                        echo "</pre>";
-
                         $stmt = $this->connect()->prepare('INSERT INTO languages (lang, level, id_candidat) VALUES (?, ?, ?)');
                         $stmt->execute($lang_array);
                     }
-                    echo "erjg";
 
-                    header("location: /RecruitMe/controllers/candidat-forms/dashboard.php");
+                    header("location: /RecruitMe/views/client/sign-up-login.php");
                 }
             } else {
                 // If the user does not exist, handle the error here
@@ -184,7 +201,7 @@ class CandidatsResume extends Dbhandler
         }
     }
 
-    public function getUser($id,$attr)
+    public function getUser($id, $attr)
     {
         $stmt = $this->connect()->prepare('SELECT * FROM candidats WHERE id_candidat = ?');
         $stmt->execute([$id]);
