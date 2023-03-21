@@ -16,10 +16,10 @@ $userInfo = $_SESSION['user'];
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sidebar Menu | Side Navigation Bar</title>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../../public/stylesheets/resume-form.css">
+
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script>
@@ -34,7 +34,7 @@ $userInfo = $_SESSION['user'];
 
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/RecruitMe/public/stylesheets/dashboard.css" />
+  <link rel="stylesheet" href="/RecruitMe/public/stylesheets/view-resume-rec.css" />
 
   <!-- Boxicons CSS -->
   <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
@@ -47,20 +47,11 @@ $userInfo = $_SESSION['user'];
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.3.0/css/all.css">
 </head>
 <body>
-    <header>
-
-        <div class="pattern"></div>
-
-        <div class="pattern1">
-        </div>
-
-    </header>
 
     <script>
         var user = <?php echo json_encode($userInfo); ?>;
         console.log(user);
 
- 
     </script>
     <div style="margin-top:100px" class="side-bar-wrapper">
 
@@ -495,11 +486,7 @@ $userInfo = $_SESSION['user'];
 
                             Ajouter une langue</button>
                     </div>
-                    <div class="final-sub">
-                        <button class="btn btn-primary final-submit" type="submit">Sauvgarder</button>
-                    </div>
-
-
+                 
                 </div>
 
             </form>

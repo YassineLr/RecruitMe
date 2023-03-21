@@ -52,6 +52,10 @@ class CandidatsResume extends Dbhandler
 
 
         try {
+            $targetDir = "/Applications/XAMPP/xamppfiles/htdocs/RecruitMe/controllers/uploads/";
+            $fileName = basename($_FILES["file"]["name"]);
+            $targetFilePath = $targetDir . $fileName;
+            // echo $targetFilePath;
             $email = $form["pers-input-3"];
             $stmt = $this->connect()->prepare('SELECT id FROM users WHERE email = ?');
             $stmt->execute([$email]);
@@ -66,7 +70,7 @@ class CandidatsResume extends Dbhandler
             $user = null;
 
             // $_SESSION["userId"] = $user[0];
-    
+
 
             if ($user_exist) {
 
@@ -96,9 +100,7 @@ class CandidatsResume extends Dbhandler
                         }
                         $edu_array[6] = $user[0];
 
-                        echo "<pre>";
-                        print_r($edu_array);
-                        echo "</pre>";
+        
 
                         $stmt = $this->connect()->prepare('INSERT INTO education (diplomat, establishment, city, b_date, f_date, description, id_candidat) VALUES (?, ?, ?, ?, ?, ?, ?)');
                         $stmt->execute($edu_array);
@@ -118,9 +120,7 @@ class CandidatsResume extends Dbhandler
                         }
                         $exp_array[6] = $user[0];
 
-                        echo "<pre>";
-                        print_r($exp_array);
-                        echo "</pre>";
+          
 
                         $stmt = $this->connect()->prepare('INSERT INTO experience (role, city, entreprise, b_date, f_date, description, id_candidat) VALUES (?, ?, ?, ?, ?, ?, ?)');
                         $stmt->execute($exp_array);
@@ -163,14 +163,9 @@ class CandidatsResume extends Dbhandler
                         }
                         $lang_array[2] = $user[0];
 
-                        echo "<pre>";
-                        print_r($lang_array);
-                        echo "</pre>";
-
                         $stmt = $this->connect()->prepare('INSERT INTO languages (lang, level, id_candidat) VALUES (?, ?, ?)');
                         $stmt->execute($lang_array);
                     }
-                    echo "erjg";
 
                     header("location: /RecruitMe/controllers/candidat-forms/dashboard.php");
                 }
@@ -184,7 +179,7 @@ class CandidatsResume extends Dbhandler
         }
     }
 
-    public function getUser($id,$attr)
+    public function getUser($id, $attr)
     {
         $stmt = $this->connect()->prepare('SELECT * FROM candidats WHERE id_candidat = ?');
         $stmt->execute([$id]);

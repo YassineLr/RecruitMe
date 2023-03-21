@@ -1,53 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/stylesheets/style.css">
+<html>
+  <!-- Settings of the HTML document -->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recruit Me</title>
-</head>
-
-<body>
-    <div class="area" >
-            <ul class="circles">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-            </ul>
-            <section>
-                <div class="banner" id="home">
-                    <div class="navbar">
-                        <img src="/public/images/logo.png" class="logo">
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">ABOUT US</a></li>
-                            <li><a href="#">SERVICES</a></li>
-                            <li><a href="#">CONTATCTS</a></li>
-                            <li><a href="#">SIGN IN</a></li>
-                        </ul>
-                    </div>
-                    <div class="content">
-                        <h1>RECRUIT ME</h1>
-                        <p>
-                            if you are looking for a job or for employees
-                            our platform is for you register now .
-                        </p>
-                        <div>
-                            <a href="login.html"><button id="switch_signup" type="button"><span></span>Register Now</button></a>
-                            <a href="login.html"><button id="switch_signup" type="button"><span></span>Register Now</button></a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <link rel="stylesheet" href="../../public/stylesheets/stylesheet.css" />
+    <link rel="stylesheet" href="../../public/stylesheets/responsive.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="header-left">
+          <img
+            class="logo"
+            src="../../public/images/logo.png"
+          />
         </div>
-</body>
-    <script src="/public/javascript/index.js"></script>
+        <span class="fa fa-bars menu-icon"></span>
+        <div class="header-right">
+          <a href="#">Home</a>
+          <a href="#about-us" class="login">About us</a>
+          <a href="#contacts" class="login">Contacts</a>
+          <a href="sign-up-login.php" class="login">sign up</a>
+        </div>
+      </div>
+    </header>
+    <!-- Top -->
+    <div class="top-wrapper">
+      <div class="container">
+        <h1>Recruit Me</h1>
+        <h1>Where you can find a job</h1>
+        <br>
+        <p>Recruit Me is a web service where you can find a job.</p>
+       <br>
+        <div class="btn-wrapper">
+          <a href="signin.html" class="btn signup">Sign in</a>
+        </div>
+      </div>
+    </div>
+    <!-- Sign up modal -->
+    <!-- <div class="signup-modal-wrapper" id="signup-modal">
+      <div class="modal">
+        <div class="close-modal">
+          <i class="fa fa-2x fa-times">×</i>
+        </div>
+        <div id="signup-form">
+          <h2>Sign in</h2>
+          <form action="#">
+            <input class="form-control" type="text" placeholder="Email" />
+            <input
+              class="form-control"
+              type="password"
+              placeholder="Password"
+            />
+            <div id="submit-btn">Sign in</div>
+          </form>
+        </div>
+      </div>
+    </div> -->
+    <!-- Lesson -->
+    <div class="lesson-wrapper">
+      <div class="container">
+        <div class="heading">
+          <h2 id="about-us">About us</h2>
+        </div>
+        <div class="lessons">
+          <div class="lesson">
+            <div class="lesson-icon">
+              <img src="https://prog-8.com/images/html/advanced/html.png" />
+              <p>Who Where are ?</p>
+            </div>
+            <p class="text-contents">
+              Recruit Me est une plateforme numérique que les agences de recrutement utilisent pour établir leur présence de marque en ligne, annoncer des offres d'emploi et inciter les candidats à chercher et à postuler directement à ces offres via leur plateforme de recrutement. Avec un pourcentage élevé de recherches d'emploi effectuées avant de prendre contact, un site web dédié au recrutement pour une agence est maintenant essentiel. C'est un moment passionnant pour les agences de recrutement.
+            </p>
+          </div>
+          <div class="lesson">
+            <div class="lesson-icon">
+              <img src="https://prog-8.com/images/html/advanced/ruby.png" />
+              <p>our collaborators</p>
+            </div>
+            <p class="text-contents">
+              Nous avons plus que 100 collaborateurs et nous somme en 
+              cours d'agrandir la liste de notre collaborateurs voila quelque exemple de notre collaborateurs
+            </p>
+            <ul class="text-contents" class="colablist">
+                <li>Oracle</li>
+                <li>IBM</li>
+                <li>Startgate</li>
+                <li>Fst</li>
+                <li>Um6p</li>
+                <li>Roca</li>
+                <li>Algolnova</li>
+                <li>...</li>
+            </ul>
+          </div>
+          <div class="lesson">
+            <div class="lesson-icon">
+              <img src="https://prog-8.com/images/html/advanced/jQuery.png" />
+              <p>Notre but</p>
+            </div>
+            <p class="text-contents">
+              Le but est de connecter les demandeurs d'emploi avec des employeurs potentiels et de les aider à trouver des opportunités d'emploi appropriées. Cela peut inclure des offres d'emploi, des outils de recherche d'emploi, des services de publication de CV et d'autres ressources pour aider les demandeurs d'emploi dans leur processus de recherche d'emploi. Le site web peut également fournir des outils et des services aux employeurs pour publier des offres d'emploi, examiner des CV et communiquer avec des candidats à l'emploi. L'objectif global est de créer une plateforme qui rend le processus de recherche d'emploi et de recrutement plus efficace, efficace et accessible à la fois pour les demandeurs d'emploi et les employeurs.            </p>
+          </div>
+          <div class="lesson">
+            <div class="lesson-icon">
+              <img src="https://prog-8.com/images/html/advanced/php.png" />
+              <p>Notre equipe</p>
+            </div>
+            <p class="text-contents">
+              Créé il y a 20 ans au Maroc et porté par une ambition forte, le Groupe a rapidement étendu sa présence géographique et ses activités pour accompagner ses clients sur l'ensemble de leurs opérations d'externalisation et leur permettre de mieux se concentrer sur leurs enjeux et cœur de métier.
+            </p>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Message -->
+    <div class="message-wrapper">
+      <div class="container">
+        <div class="heading">
+          <h2 id="contacts">Contacts</h2>
+          <ul>
+            <li>Num&eacute;ro de T&eacute;l&eacute;phone : 0666467815</li>
+            <li>Fix : 0545415468</li>
+          </ul>
+          <br>
+        </div>
+        <br>
+        <p class="lst">Ou vous pouvez nous contacter par mail :</p>
+        <a href="mailto:yassine.lr.2001@gmail.com" class="btn message">Send Mail</a>
+        <br>
+        <br>
+        <h2>Notre Emplacement</h2>
+        <a href="https://www.google.com/maps/place/Facult%C3%A9+des+sciences+et+techniques/@33.0309122,-7.6186937,17z/data=!3m1!4b1!4m6!3m5!1s0xda61aabf2a6a8b9:0xe6a579c28d993de9!8m2!3d33.0309077!4d-7.616505!16s%2Fg%2F1tjjqqs_"><img class="map" src="../../public/images/map.jpg"></a>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p class="in-footer">Recruit Me</p>
+        <p>Best way to build your career</p>
+      </div>
+      <script type="text/javascript" src="../../public/javascript/script1.js"></script>
+    </footer>
+  </body>
 </html>
